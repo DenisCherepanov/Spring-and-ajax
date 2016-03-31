@@ -14,7 +14,11 @@ public class AdminController {
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String home() {
 		return "private/admin";
-	}        
+	}   
+        @RequestMapping(value = "/calc", method = RequestMethod.GET)
+	public String calc() {
+		return "private/calc";
+	}   
         @RequestMapping(value = "/calca", method = RequestMethod.POST)
     public @ResponseBody String Calculator(Double number1, Double number2, int operation,String error ) throws JsonProcessingException {
         Model model = new Model();
