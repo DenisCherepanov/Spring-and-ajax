@@ -14,12 +14,11 @@
         <script>
             function Func(datas) {
                 var data = $.parseJSON(datas);
-                if (data.error ==="+") {
+                if (data.error === "+") {
                     $("#info").text('Ошибка!Деление на ноль невозможно');
-                }
-                else {
-                    $("#info").text('Ответ '+data.result);                   
-                    
+                } else {
+                    $("#info").text('Ответ ' + data.result);
+
                 }
             }
             $(document).ready(function () {
@@ -55,36 +54,40 @@
     <center><h1>Калькулятор </h1><center/>
     </head>
     <body>       
+        <div class="form-horizontal"">
             <div class="login" >
-        <p><b>Введите число 1</b><br>
-            <input  name="number1" id="number1" size="5" class="input-small">                
-        <p><b>Введите число 2</b><br>
-            <input  name="number2" id="number2" size="5" class="input-small">
-        </p>
-        <p><b> Операция </b><br>
-            <select name="opt" id="operations">
-                <option value="0"> + </option>
-                <option value="1"> - </option>
-                <option value="2"> * </option>
-                <option value="3"> / </option>
-                <option value="4"> % </option>
-                <option value="5"> ^ </option>
+                <div class="form-group">
+                    <label class="col-sm-5 control-label" for="input">Введите число 1:</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" type='text' id="input" name="number1" placeholder="Первое число"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5 control-label" for="input2">Введите число 2:</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" type='text' id="input2" name="number2" placeholder="Второе число"/>
+                    </div>
+                </div>
 
-            </select>                                
-            <br>
-            <p> 
-            <input class="btn btn-primary" type="submit" id="calculate" value="Подсчитать"> 
-            </p>
-        <p>           
+                <label class="col-sm-5 control-label" for="operations">Операция:</label>
+                <select class="col-sm-3 form-control" name="opt" id="operations">
+                    <option value="0"> + </option>
+                    <option value="1"> - </option>
+                    <option value="2"> * </option>
+                    <option value="3"> / </option>
+                    <option value="4"> % </option>
+                    <option value="5"> ^ </option>
+                </select>
+
+                <input class="col-sm-offset-5 btn btn-primary" id="calculate" name="submit" type="submit" value="Подсчитать" />
+            </div>        
             <a class="btn btn-primary" href="j_spring_security_logout">Выход</a>
-        </p>
-        <p>
-            <b>
-                 <span id="info"></span>
-            </b>
-        </p>
-        
-        <div/>
-        <h2><a href="<c:url value="/calc" />">Перейти на страницу Администратора</a></h2>
+            <p>
+                <b>
+                    <span id="info"></span>
+                </b>
+            </p>
+            <div/>
+            <h2><a href="<c:url value="/calc" />">Перейти на страницу Администратора</a></h2>
     </body>
 </html>

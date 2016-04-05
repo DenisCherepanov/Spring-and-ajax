@@ -185,12 +185,17 @@
             <version>2.2.2</version>
             <scope>compile</scope>
         </dependency>
+<<<<<<< HEAD:Spring-and-ajax-master2/SpringSecurityTest/pom.xml
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>jsr250-api</artifactId>
             <version>1.0</version>
             <scope>provided</scope>
         </dependency>
+=======
+        
+
+>>>>>>> origin/master:SpringSecurityTest/pom.xml
     </dependencies>
     <build>
         <plugins>
