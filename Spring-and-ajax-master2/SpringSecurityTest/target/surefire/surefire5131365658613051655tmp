@@ -1,7 +1,0 @@
-#surefire
-#Wed Mar 30 23:56:42 MSK 2016
-maven.ext.class.path=C\:\\Program Files\\NetBeans 8.0.2\\java\\maven-nblib\\netbeans-eventspy.jar
-user.dir=C\:\\Users\\\u0414\u0435\u043D\u0438\u0441\\Desktop\\SpringSecurityTest
-localRepository=C\:\\Users\\\u0414\u0435\u043D\u0438\u0441\\.m2\\repository
-netbeans.deploy=true
-basedir=C\:\\Users\\\u0414\u0435\u043D\u0438\u0441\\Desktop\\SpringSecurityTest
