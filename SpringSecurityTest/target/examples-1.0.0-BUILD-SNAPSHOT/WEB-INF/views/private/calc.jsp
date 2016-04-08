@@ -17,18 +17,19 @@
     </head>
     <body>
         <h3>Журнал событий</h3>
-        <div class="form-group">
-            <select id="username">
+        <div class="form-group form-inline">
+            <select id="username" class="form-control">
                 <option value="admin" selected="selected">Admin</option>
                 <option value="denis">Denis</option>
                 <option value="artem">Artem</option>
             </select>
-            <input class="btn btn-info btn-xs" type="submit" id="show" value="Построить отчёт"> 
+            <input class="btn btn-info btn-sm" type="submit" id="show" value="Построить отчёт"> 
 
             <div class="tableLog" id="content"></div>
-            <p>           
-                <a class="btn btn-primary" href="j_spring_security_logout">Выход</a>
-            </p>
+            </br>
+            <a class="btn btn-primary btn-warning" href="/examples/admin">Назад</a>
+            <p><a class="btn btn-primary" href="j_spring_security_logout">Выход</a></p>
+            
         </div>
         <script src="<c:url value="/resources/core/jquery-2.2.0.min.js" />"></script>
         <script>
@@ -45,7 +46,7 @@
                         success: function (res) {
                             data = $.parseJSON(res);
                             var innerHtml = getInnerHtml(data);
-                            $('#content').html('<table cellpadding = \"5\" border = \"1\" class=\"table table-striped\">' + innerHtml);
+                            $('#content').html('<table cellpadding = \"5\" border = \"1\" class=\"table table-hover \">' + innerHtml);
                         }
                     });
                     return false;
@@ -58,7 +59,8 @@
                         operation;
 
                 if (dataLen === 0) {
-                    text = text + "<tr><td colspan=\"3\">Данные отсутствуют!<td></tr>";
+                    alert('Данные отсутствуют!');
+                    text = Null;
                 }
 
                 for (var i = 0; i < dataLen; i++) {
@@ -73,8 +75,14 @@
                             operation = "*";
                             break;
                         case 3:
+                        {
                             operation = "/";
+                            if (data[i]._number2 === 0)
+                            {
+                                data[i]._result = "Деление на ноль";
+                            }
                             break;
+                        }
                         case 4:
                             operation = "pow";
                             break;
